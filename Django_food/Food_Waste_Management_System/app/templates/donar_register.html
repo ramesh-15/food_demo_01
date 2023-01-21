@@ -1,0 +1,59 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+    body{background-image:url("{% static 'img/signup1.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;}
+
+    .head{background-color:azure;}
+    h3{color:black;}
+    h2{color:red;}
+    .success{color:blue;}
+
+<!--&lt;!&ndash;    form inputs&ndash;&gt;-->
+<!--      input[type=text]{-->
+<!--    margin:5px;-->
+<!--    width:97%;-->
+<!--    padding:12px;-->
+<!--    border:1px solid black;-->
+<!--    border-radius: 5px;-->
+<!--  }-->
+<!--    input[type=email]{-->
+<!--    margin:5px;-->
+<!--    width:97%;-->
+<!--    padding:12px;-->
+<!--    border:1px solid black;-->
+<!--    border-radius: 5px;-->
+<!--  }-->
+<!--&lt;!&ndash;  form input ended&ndash;&gt;-->
+</style>
+</head>
+<body>
+<center>
+    <form action="" method = 'post'>
+        {% csrf_token %}
+        <h2>Donar Registration Form !!! </h2>
+        {{data.as_p}}
+        <input type="submit" class="btb btn-success" value="Send Details">
+
+
+
+        {% if messages %}
+            {% for message in messages %}
+                <p {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    </form>
+</center>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+{%  endblock %}
