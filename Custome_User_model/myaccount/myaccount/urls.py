@@ -1,4 +1,4 @@
-"""Food_Waste_Management_System URL Configuration
+"""myaccount URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -18,5 +18,5 @@ from django.urls import path,include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('',include('account.urls')),
+    path('',include('account.urls'))
 ]
