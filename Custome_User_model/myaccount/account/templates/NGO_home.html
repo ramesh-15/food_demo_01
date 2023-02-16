@@ -20,6 +20,8 @@
 <div class="row">
 {% if data %}
 {% for i in data %}
+
+
 <div class="col-sm-3">
 <div class="card m-2 ">
   <div class="card-body">
@@ -30,13 +32,16 @@
     <h5 class="card-title">food_pick_up : {{i.food_pick_up}}</h5>
     <h5 class="card-title">pincode : {{i.pincode}}</h5>
     <h5 class="card-title">date : {{i.date}}</h5>
+    <h5 class="card-title">flag : {{i.flag}}</h5>
 
-    <a href="#" class ='btn btn-primary' >Request for food</a>
+
+    <a href="{% url 'request' i.id %} " class ='btn btn-primary' >Request for food</a>
 
 
   </div>
 </div>
 </div>
+
     {% endfor %}
 {% else %}
 <h1>No one donated the food...</h1>
