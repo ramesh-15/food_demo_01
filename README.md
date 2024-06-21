@@ -1,2 +1,2 @@
-# food_demo_01
+# food_court
 Food waste management system
